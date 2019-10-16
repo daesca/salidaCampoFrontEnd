@@ -1,5 +1,5 @@
 <template>
-    <div id="formFieldTrip">
+    <div id="formularioSalidas">
         <v-container>
             <v-row justify="center">
                 <v-col cols="12" md="8">
@@ -95,7 +95,7 @@
 </template>
 <script>
 export default {
-    name: "formFieldTrip"
+    name: "formularioSalidas"
 }
 </script>
 <style>

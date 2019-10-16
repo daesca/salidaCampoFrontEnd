@@ -1,5 +1,5 @@
 <template>
-    <div id="tabledashboard">
+    <div id="tablaPrincipal">
         <v-data-table
             :headers        = "headers"
             :items          = "fieldtrips"
@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-    name: "tabledashboard",
+    name: "tablaPrincipal",
     data: () => ({
         datos:[
             {

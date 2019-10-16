@@ -9,15 +9,10 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-import login      from './components/login/login.vue';
+
 
 export default {
   name: 'App',
-  components: {
-    // HelloWorld,
-    login
-  },
   data: () => ({
     //
   }),

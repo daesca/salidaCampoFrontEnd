@@ -9,7 +9,7 @@
         
         <v-container>
             <v-row justify="center">
-                <tabledashboard></tabledashboard>
+                <tablaSalidasPrincipal></tablaSalidasPrincipal>
             </v-row>
         </v-container>
         
@@ -17,12 +17,12 @@
 </template>
 <script>
 
-    import tabledashboard from './tabledashboard.vue'
+    import tablaSalidasPrincipal from './salidas/tablaSalidasPrincipal.vue'
 
     export default {
         name: "professorDashboard",
         components:{
-            tabledashboard
+            tablaSalidasPrincipal
         }
     }
 </script>

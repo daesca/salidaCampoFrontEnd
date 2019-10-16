@@ -24,7 +24,7 @@ export default {
 	data: () => ({
 
 		file: [],
-		formFileInput:[ v => !!v || this.file.type != ".xls" || "Formato no admitido" , v => !!v || this.file.type != ".xlsx" || "Formato no admitido"]
+		//formFileInput:[ v => !!v || this.file.type != ".xls" || "Formato no admitido" , v => !!v || this.file.type != ".xlsx" || "Formato no admitido"]
 	}),
 	methods:{
 		cargarArchivo(){

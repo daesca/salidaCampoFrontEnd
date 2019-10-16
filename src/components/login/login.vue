@@ -76,7 +76,7 @@ export default({
             if(this.$refs.form.validate()){
                 let authValidate = this.authUser();
                 if(authValidate.status){
-                    this.$router.push("pm/dashboard");
+                    this.$router.push("docente/principal");
                 }
                 this.messageOptions.class   = "error";
                 this.messageOptions.message = authValidate.message;

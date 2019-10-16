@@ -3,9 +3,9 @@ import Router from 'vue-router';
 
 //Components
 import login              from '../src/components/login/login.vue';
-import professorDashboard from '../src/components/professorModule/dashboard.vue';
-import formFieldTrip      from '../src/components/professorModule/formFieldTrip.vue';
-import PruebaExcel        from '../src/components/PruebaExcel.vue';
+import docenteDashboard   from '../src/components/moduloDocente/dashboard.vue';
+import formularioSalidas  from '../src/components/moduloDocente/salidas/formularioSalidas.vue';
+//import PruebaExcel        from '../src/components/PruebaExcel.vue';
 
 Vue.use(Router);
 
@@ -16,17 +16,17 @@ export default new Router({
             component: login
         },
         {
-            path: '/pm/dashboard',
-            component: professorDashboard
+            path: '/docente/principal',
+            component: docenteDashboard
         },
         {
-            path: '/formFT',
-            component: formFieldTrip
+            path: '/docente/formulario-salidas',
+            component: formularioSalidas
         },
-        {
-            path: '/pruebaexcel',
-            component: PruebaExcel
-        }
+        // {
+        //     path: '/pruebaexcel',
+        //     component: PruebaExcel
+        // }
 
     ]
 });
