@@ -8,8 +8,22 @@
         </v-app-bar>
         
         <v-container>
-            <v-row justify="center">
-                <tablaSalidasPrincipal></tablaSalidasPrincipal>
+            <v-row>
+                <v-col cols="1" class="side-menu">
+                    <ul>
+                        <li>
+                            <router-link to="/docente/salidas/principal">Salidas</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/docente/grupos/principal">Grupos</router-link>
+                        </li>
+                    </ul>
+                </v-col>
+                <v-col cols="9">
+                    <router-view></router-view>
+                    <!-- <router-view name="docentePrincipalSalidas"></router-view>
+                    <router-view name="docentePrincipalGrupos"></router-view> -->
+                </v-col>
             </v-row>
         </v-container>
         
@@ -17,15 +31,17 @@
 </template>
 <script>
 
-    import tablaSalidasPrincipal from './salidas/tablaSalidasPrincipal.vue'
-
     export default {
         name: "professorDashboard",
-        components:{
-            tablaSalidasPrincipal
-        }
+
     }
 </script>
-<style lang="stylus">
+<style>
+    .side-menu{
+        border-right: 1px solid #000;
+    }
 
+    .side-menu ul{
+        list-style: none;
+    }
 </style>

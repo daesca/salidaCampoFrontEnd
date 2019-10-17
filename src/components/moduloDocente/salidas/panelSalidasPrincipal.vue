@@ -1,8 +1,8 @@
 <template>
-    <div id="tablaPrincipal">
+    <div id="panelSalidasPrincipal">
         <v-data-table
             :headers        = "headers"
-            :items          = "fieldtrips"
+            :items          = "salidas"
             :items-per-page = "5"
             class           = "elevation-1"
         >
@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-    name: "tablaPrincipal",
+    name: "panelSalidasPrincipal",
     data: () => ({
         datos:[
             {
@@ -54,13 +54,13 @@ export default {
                 value: "status"
             }
         ],
-        fieldtrips:[
+        salidas:[
         ]
     }),
     created: function(){
-        for(let register of this.datos){
-            if(register.eliminated != 1){
-                this.fieldtrips.push(register);
+        for(let registro of this.datos){
+            if(registro.eliminated != 1){
+                this.salidas.push(registro);
             }
         }
     }

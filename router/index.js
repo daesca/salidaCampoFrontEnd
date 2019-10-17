@@ -2,9 +2,17 @@ import Vue       from 'vue';
 import Router from 'vue-router';
 
 //Components
-import login              from '../src/components/login/login.vue';
-import docenteDashboard   from '../src/components/moduloDocente/dashboard.vue';
-import formularioSalidas  from '../src/components/moduloDocente/salidas/formularioSalidas.vue';
+import login                    from '../src/components/login/login.vue';
+import docenteDashboard         from '../src/components/moduloDocente/dashboard.vue';
+
+//Rutas para componentes del modulo de Salidas
+import panelSalidasPrincipal    from '../src/components/moduloDocente/salidas/panelSalidasPrincipal.vue';
+import formularioSalidas        from '../src/components/moduloDocente/salidas/formularioSalidas.vue';
+
+//Rutas para componentes del modulo de grupos
+import panelGruposPrincipal     from '../src/components/moduloDocente/grupos/panelGruposPrincipal.vue';
+import formularioGrupos         from '../src/components/moduloDocente/grupos/formularioGrupos.vue';
+
 //import PruebaExcel        from '../src/components/PruebaExcel.vue';
 
 Vue.use(Router);
@@ -16,8 +24,20 @@ export default new Router({
             component: login
         },
         {
-            path: '/docente/principal',
-            component: docenteDashboard
+            path: '/docente/',
+            component: docenteDashboard,
+            children: [
+                {
+                    path: 'salidas/principal',
+                    //component: { docentePrincipalSalidas: panelSalidasPrincipal}
+                    component: panelSalidasPrincipal
+                },
+                {
+                    path: 'grupos/principal',
+                    //component: {docentePrincipalGrupos: panelGruposPrincipal }
+                    component: panelGruposPrincipal 
+                }
+            ]
         },
         {
             path: '/docente/formulario-salidas',
