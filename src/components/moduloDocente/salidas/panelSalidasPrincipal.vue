@@ -1,12 +1,22 @@
 <template>
     <div id="panelSalidasPrincipal">
-        <v-data-table
-            :headers        = "headers"
-            :items          = "salidas"
-            :items-per-page = "5"
-            class           = "elevation-1"
-        >
-        </v-data-table>
+        <v-container>
+            <v-col cols="12" class="text-right">
+                <v-btn class="success btn-general">
+                    <router-link to="crear" style="color:#fff">Crear salida</router-link>
+                    <v-icon dark>mdi-plus</v-icon>
+                </v-btn>
+            </v-col>
+            <v-col cols="12">
+                <v-data-table
+                    :headers        = "headers"
+                    :items          = "salidas"
+                    :items-per-page = "5"
+                    class           = "elevation-1"
+                >
+                </v-data-table>
+            </v-col>
+        </v-container>
     </div>
 </template>
 <script>

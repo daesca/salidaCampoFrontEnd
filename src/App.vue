@@ -18,3 +18,8 @@ export default {
   }),
 };
 </script>
+<style>
+  .btn-general a{
+    text-decoration: none;
+  }
+</style>

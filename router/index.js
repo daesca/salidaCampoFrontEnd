@@ -8,6 +8,7 @@ import docenteDashboard         from '../src/components/moduloDocente/dashboard.
 //Rutas para componentes del modulo de Salidas
 import panelSalidasPrincipal    from '../src/components/moduloDocente/salidas/panelSalidasPrincipal.vue';
 import formularioSalidas        from '../src/components/moduloDocente/salidas/formularioSalidas.vue';
+import detallesSalida           from '../src/components/moduloDocente/salidas/detallesSalida.vue';
 
 //Rutas para componentes del modulo de grupos
 import panelGruposPrincipal     from '../src/components/moduloDocente/grupos/panelGruposPrincipal.vue';
@@ -36,6 +37,14 @@ export default new Router({
                     path: 'grupos/principal',
                     //component: {docentePrincipalGrupos: panelGruposPrincipal }
                     component: panelGruposPrincipal 
+                },
+                {
+                    path: 'salidas/crear',
+                    component: formularioSalidas
+                },
+                {
+                    path: 'salidas/detalle',
+                    component: detallesSalida
                 }
             ]
         },

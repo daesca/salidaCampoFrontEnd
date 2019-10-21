@@ -19,7 +19,7 @@
                         </li>
                     </ul>
                 </v-col>
-                <v-col cols="9">
+                <v-col cols="11">
                     <router-view></router-view>
                     <!-- <router-view name="docentePrincipalSalidas"></router-view>
                     <router-view name="docentePrincipalGrupos"></router-view> -->
