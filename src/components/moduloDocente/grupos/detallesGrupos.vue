@@ -27,7 +27,7 @@
                     <b>Año: </b> {{ ano }}
                 </v-col>
                 <v-col cols="12">
-                    <b>Número de estudiantes: </b> {{ totalEstudiantes }}
+                    <b>Número de estudiantes: </b> {{ totalEstudiantes }} 
                 </v-col>
             </v-row>
         </v-container>
