@@ -30,7 +30,7 @@
                     <b>Hora de salida: </b> {{ tiempo }}
                 </v-col>
             </v-row>
-        <v-container>
+        </v-container>
     </div>
 </template>
 <script>

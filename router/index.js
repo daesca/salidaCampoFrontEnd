@@ -14,7 +14,7 @@ import detallesSalida           from '../src/components/moduloDocente/salidas/de
 import panelGruposPrincipal     from '../src/components/moduloDocente/grupos/panelGruposPrincipal.vue';
 import formularioGrupos         from '../src/components/moduloDocente/grupos/formularioGrupos.vue';
 
-//import PruebaExcel        from '../src/components/PruebaExcel.vue';
+import PruebaExcel        from '../src/components/PruebaExcel.vue';
 
 Vue.use(Router);
 
@@ -52,10 +52,10 @@ export default new Router({
             path: '/docente/formulario-salidas',
             component: formularioSalidas
         },
-        // {
-        //     path: '/pruebaexcel',
-        //     component: PruebaExcel
-        // }
+        {
+            path: '/pruebaexcel',
+            component: PruebaExcel
+        }
 
     ]
 });

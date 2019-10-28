@@ -6,8 +6,9 @@
 		        	:rules = "formFileInput"
 		        	accept=".xls,.xlsx" 
 		        	label="Cargar maestros" 
-		        	v-model = "file"
 		      		name="docentes"
+					id="docentes"
+					@change="actualizarArchivo()"
 		        >
 		        </v-file-input>
 		    </v-col>
@@ -22,43 +23,49 @@ export default {
     
 	name: "pruebas-excel",
 	data: () => ({
-
-		file: [],
-		//formFileInput:[ v => !!v || this.file.type != ".xls" || "Formato no admitido" , v => !!v || this.file.type != ".xlsx" || "Formato no admitido"]
+		archivo: '',
+		formFileInput:[ 
+			v => !!v || this.archivo.type != ".xls" || "Formato no admitido" , 
+			v => !!v || this.archivo.type != ".xlsx" || "Formato no admitido"]
 	}),
 	methods:{
+		actualizarArchivo(event){
+
+			this.archivo = document.querySelector("input[name='docentes']").files[0];
+			// console.log(this.archivo);
+		},
 		cargarArchivo(){
 
 			const formData = new FormData();
 
-			formData.append("docentes", this.file);
+			formData.append("docentes", this.archivo, this.archivo.name);
 
-			// this.$http.post("http://localhost:8000/public/receiveExcel", formData, {
-			// 	headers:{
-			// 		'Content-Type': 'multipart/form-data',
-   //          'Access-Control-Allow-Origin': '*',
-   //          'Access-Control-Allow-Methods': 'POST, GET, PUT, OPTIONS, DELETE',
-   //          'Access-Control-Allow-Headers': 'Access-Control-Allow-Methods, Access-Control-Allow-Origin, Origin, Accept, Content-Type',
-   //          'Accept': 'application/json'
-			// 	}
-			// }).then(res=>{
+			console.log(formData);
 
-			// 	alert(res);
+			this.$http.post("http://localhost:8000/public/cargarexcel", formData, {
+				headers:{
+					'Content-Type': 'multipart/form-data',
+           
+				}
+			}).then(res=>{
 
-			// }, error => {
+				console.log(res);
 
-			// 	console.log("TODO ESTALLÓ");
-			// })
+			}, error => {
+
+				console.log("TODO ESTALLÓ");
+			})
 
 			var req = new XMLHttpRequest();
 
-			req.open("POST", "http://localhost:8000/public/receiveExcel", true);
-			req.setRequestHeader("Content-Type", 'multipart/form-data');
-			req.setRequestHeader("Access-Control-Allow-Origin", '*');
-			req.setRequestHeader("Access-Control-Allow-Headers", 'Origin, X-Requested-With, Content-Type, Accept');
-			req.setRequestHeader('Access-Control-Allow-Methods', 'POST, GET, PUT, OPTIONS, DELETE');
-			req.send(null);
-			if (req.status == 200) dump(req.responseText);
+			// req.open("POST", "http://localhost:8000/public/cargarExcel", true);
+			// req.setRequestHeader("Content-Type", 'multipart/form-data');
+			// req.setRequestHeader("Access-Control-Allow-Origin", 'Content-Type');
+			// req.setRequestHeader("Access-Control-Allow-Headers", 'Origin, X-Requested-With, Content-Type, Accept');
+			// req.setRequestHeader('Access-Control-Allow-Methods', 'POST, GET, PUT, OPTIONS, DELETE');
+			// req.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+			// req.send(null);
+			// if (req.status == 200) dump(req.responseText);
 
 		}
 	}
