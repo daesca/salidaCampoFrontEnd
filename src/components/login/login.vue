@@ -1,44 +1,47 @@
 <template>
-    <v-container>
-        <v-row justify="center">
-            <v-col cols="12">
-                <h1 class="text-center">Software de Gestion</h1>
-            </v-col>
-            <v-col cols="4" style="border:1px solid #ccc; border-radius: 5px;">
-                <h3 class="text-center">¡Buen día!</h3>
-                <v-form ref="form" v-model = "valid" lazy-validation>
-                    <v-alert :type = "messageOptions.class" id="alerts" class="none">
-                       {{ messageOptions.message }}
-                    </v-alert>
-                    <v-col
-                        cols="12"
-                    >
-                        <v-text-field
-                            v-model = "username"
-                            :rules = "userRules"
-                            label = "Usuario"
-                            required
+    <div id="login" class="light-green darken-2">
+        <v-container>
+            <v-row justify="center">
+                <v-col cols="12">
+                    <h1 class="text-center">Software de Gestion</h1>
+                </v-col>
+                <v-col cols="4" class="white" style="border:1px solid #ccc; border-radius: 5px;">
+                    <h3 class="text-center">¡Buen día!</h3>
+                    <v-form ref="form" v-model = "valid" lazy-validation>
+                        <v-alert :type = "messageOptions.class" id="alerts" class="none">
+                        {{ messageOptions.message }}
+                        </v-alert>
+                        <v-col
+                            cols="12"
                         >
-                        </v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="12"
-                    >
-                        <v-text-field
-                            v-model = "password"
-                            :rules  = "passwordRules" 
-                            label   = "Contraseña"
-                            required
+                            <v-text-field
+                                v-model = "username"
+                                :rules = "userRules"
+                                label = "Usuario"
+                                required
+                            >
+                            </v-text-field>
+                        </v-col>
+                        <v-col
+                            cols="12"
                         >
-                        </v-text-field>
-                    </v-col>
-                    <v-col cols="12" class="text-right">
-                        <v-btn class="success" dark @click="formValidate()">Ingresar</v-btn>
-                    </v-col>
-                </v-form>
-            </v-col>
-        </v-row>
-    </v-container> 
+                            <v-text-field
+                                v-model = "password"
+                                :rules  = "passwordRules"
+                                type   = "password" 
+                                label   = "Contraseña"
+                                required
+                            >
+                            </v-text-field>
+                        </v-col>
+                        <v-col cols="12" class="text-right">
+                            <v-btn class="success" dark @click="formValidate()">Ingresar</v-btn>
+                        </v-col>
+                    </v-form>
+                </v-col>
+            </v-row>
+        </v-container>
+    </div> 
 </template>
 <script>
 
@@ -87,4 +90,9 @@ export default({
     }
 });
 
-</script>   
+</script> 
+<style scoped>
+    #login{
+        min-height: 100vh;
+    }
+</style>
